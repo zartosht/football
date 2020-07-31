@@ -16,5 +16,6 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get("reset/all", "MatchController.resetData")
 Route.get("/:WEEK", "MatchController.showResults")
 Route.get("matches/:TEAM_ID", "MatchController.showTeamMatches")

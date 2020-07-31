@@ -12,6 +12,24 @@ const Group = use("App/Models/Group")
 class MatchController {
 
     /**
+     * Reset data and start a fresh one
+     *
+     * @param {object} ctx
+     * @param {Request} ctx.request
+     * @param {Response} ctx.response
+     */
+    async resetData({ request, response, params }) {
+        const ace = require('@adonisjs/ace')
+
+        await ace.call('migration:refresh', {}, { silent: true })
+        await ace.call('seed', {}, { silent: true })
+
+        return {
+            reset: "OK"
+        }
+    }
+
+    /**
      * Show matches for a team
      *
      * @param {object} ctx
