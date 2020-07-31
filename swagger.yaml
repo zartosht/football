@@ -1,0 +1,178 @@
+swagger: "2.0"
+info:
+  description: "Sample challenge for Europe Championship"
+  version: "1.0.0"
+  title: "Football"
+  contact:
+    email: "hi@Zartosht.dev"
+host: "127.0.0.1:3333"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /{week}:
+    get:
+      summary: "Show week results"
+      description: "Return list of teams and their results based on the week"
+      operationId: "getPetById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "week"
+        in: "path"
+        description: "Week number from 1 to 8"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Result"
+definitions:
+  Group:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+        description: "Group ID"
+      name:
+        type: "string"
+        example: "A"
+        description: "Group Name"
+      created_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+      updated_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+  KnockoutCup:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+        description: "Knockout Cup ID"
+      name:
+        type: "string"
+        example: "1_16_1"
+        description: "Knockout cup Name"
+      created_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+      updated_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+  Match:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+        description: "Match ID"
+      first_team_id:
+        type: "integer"
+        example: 1
+        description: "First team ID"
+      second_team_id:
+        type: "integer"
+        example: 2
+        description: "Second team ID"
+      at:
+        type: "integer"
+        example: 1
+        description: "ID of the team that this match took place in"
+      first_team_goals:
+        type: "integer"
+        example: 5
+        description: "Goals for first team"
+      second_team_goals:
+        type: "integer"
+        example: 4
+        description: "Goals for second team"
+      week:
+        type: "integer"
+        example: 5
+        description: "Number of week that this game took place"
+      created_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+      updated_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+  Team:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 1
+        description: "Team id"
+      name:
+        type: "string"
+        example: "LOSC Lille"
+        description: "Team name"
+      strength: 
+        type: "integer"
+        example: 5
+        description: "Team strength based on match results"
+      group_id:
+        type: "integer"
+        example: 1
+        description: "Id of the group that this team belongs to (8 premier groups)"
+      plays:
+        type: "integer"
+        example: 7
+        description: "How many matches this team player"
+      win:
+        type: "integer"
+        example: 1
+        description: "How many win this team had"
+      draw:
+        type: "integer"
+        example: 1
+        description: "How many draw this team had"
+      lose:
+        type: "integer"
+        example: 5
+        description: "How many lose this team had"
+      goals_for:
+        type: "integer"
+        example: 8
+        description: "How many goals this team put in opponent team"
+      goals_against:
+        type: "integer"
+        example: 42
+        description: "How many goals this teams's opennents put"
+      goals_average:
+        type: "integer"
+        example: -34
+        description: "Diffrence between goals_for and goals_against"
+      score:
+        type: "integer"
+        example: 4
+        description: "Score that determined based on team wins and draws"
+      created_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+      updated_at:
+        type: "string"
+        example: "2020-08-01 23:24:08"
+  Result:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        group:
+          type: "string"
+          example: "A"
+          description: "Group name"
+        teams:
+          type: "array"
+          description: "List of teams inside this group"
+          items:
+            $ref: "#/definitions/Team"
