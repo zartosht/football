@@ -53,10 +53,15 @@ class MatchController {
                     let firstKnockoutCupGroupTeams = await firstKnockoutCupGroup.teams().fetch()
                     let secondKnockoutCupGroupTeams = await secondKnockoutCupGroup.teams().fetch()
 
-                    return {
-                        firstGroup: firstKnockoutCupGroupTeams,
-                        secondGroup: secondKnockoutCupGroupTeams
-                    }
+                    return [
+                        {
+                            group: "1-16",
+                            teams: [
+                                ...firstKnockoutCupGroupTeams.rows,
+                                ...secondKnockoutCupGroupTeams.rows
+                            ]
+                        }
+                    ]
                 }
 
                 let firstKnockoutCupGroupTeams = await firstKnockoutCupGroup.teams().fetch()

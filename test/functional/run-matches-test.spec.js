@@ -150,60 +150,62 @@ test('Make sure every team play once a week', async ({ client }) => {
         }
       ])
     } else if (week > 6 && week < 9) {
-      response.assertJSONSubset({
-        firstGroup: [
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          }
-        ],
-        secondGroup: [
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          },
-          {
-            plays: week
-          }
-        ]
-      })
+      response.assertJSONSubset([
+        {
+          group: "1-16",
+          teams: [
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            },
+            {
+              plays: week
+            }
+          ]
+        }
+      ]
+      )
     }
   }
 })
