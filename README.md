@@ -1,28 +1,20 @@
-# Adonis API application
+# Football prediction API
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
-
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
-
-## Setup
-
-Use the adonis command to install the blueprint
+For using this app run the following
 
 ```bash
-adonis new yardstick --api-only
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
+npm install -g @adoniscli/js
+npm install
+adonis install pg
+adonis key:generate
 adonis migration:run
+adonis seed
+adonis serve --dev
 ```
+
+Now go to [Server](http://127.0.0.1:4000)
+
+### How to use
+
+For viewing every week results put week number at the end of the url like: [Week number 1](http://127.0.0.1:4000/1).
+you can view weeks without running previous week. it gives you the results based on the data that already have and it may change when you run weeks one after another.
