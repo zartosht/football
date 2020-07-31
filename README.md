@@ -27,4 +27,4 @@ For testing app, create a database named `football_test`, go to preject folder a
 adonis test
 ```
 
-This tesst will check every week results to see if every team took place in a match only once a week
+This test will check every week results to see if every team took place in a match only once a week
