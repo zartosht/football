@@ -1,0 +1,35 @@
+version: "3"
+
+volumes:
+  database:
+networks:
+  football:
+ 
+services:
+  app:
+    image: back
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    restart: always
+    ports:
+      - 4000:4000
+    env_file:
+      - ./.env
+    networks:
+      - football 
+    command: ["rest"]
+  
+  postgres:
+    image: postgres:11-alpine
+    restart: always
+    volumes:
+      - database:/var/lib/postgresql/data:z
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      - 5432:5432
+    networks:
+      - football

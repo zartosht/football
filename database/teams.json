@@ -1,0 +1,131 @@
+
+module.exports[
+    {
+        "name": "Paris Saint-Germain",
+        "score": 16
+    },
+    {
+        "name": "Real Madrid",
+        "score": 11
+    },
+    {
+        "name": "Club Bruges",
+        "score": 3
+    },
+    {
+        "name": "Galatasaray",
+        "score": 2
+    },
+    {
+        "name": "Bayern Munich",
+        "score": 18
+    },
+    {
+        "name": "Tottenham Hotspur",
+        "score": 10
+    },
+    {
+        "name": "Olympiakos",
+        "score": 4
+    },
+    {
+        "name": "Étoile rouge de Belgrade",
+        "score": 3
+    },
+    {
+        "name": "Manchester City",
+        "score": 14
+    },
+    {
+        "name": "Atalanta Bergame",
+        "score": 7
+    },
+    {
+        "name": "Chakhtar Donetsk",
+        "score": 6
+    },
+    {
+        "name": "Dinamo Zagreb",
+        "score": 5
+    },
+    {
+        "name": "Juventus",
+        "score": 16
+    },
+    {
+        "name": "Club Atlético de Madrid",
+        "score": 10
+    },
+    {
+        "name": "TSV Bayer 04 Leverkusen",
+        "score": 6
+    },
+    {
+        "name": "Lokomotiv Moscou",
+        "score": 3
+    },
+    {
+        "name": "Liverpool",
+        "score": 13
+    },
+    {
+        "name": "Società Sportiva Calcio Naples",
+        "score": 12
+    },
+    {
+        "name": "Red Bull Salzbourg",
+        "score": 7
+    },
+    {
+        "name": "Khon Kaen United F.C.",
+        "score": 7
+    },
+    {
+        "name": "FC Barcelone",
+        "score": 14
+    },
+    {
+        "name": "BV 09 Borussia Dortmund",
+        "score": 10
+    },
+    {
+        "name": "Inter Milan",
+        "score": 7
+    },
+    {
+        "name": "SK Slavia Prague",
+        "score": 2
+    },
+    {
+        "name": "RB Leipzig",
+        "score": 11
+    },
+    {
+        "name": "Olympique lyonnais",
+        "score": 8
+    },
+    {
+        "name": "SL Benfica B",
+        "score": 7
+    },
+    {
+        "name": "Zénith Saint-Pétersbourg",
+        "score": 7
+    },
+    {
+        "name": "Valence",
+        "score": 11
+    },
+    {
+        "name": "Chelsea",
+        "score": 11
+    },
+    {
+        "name": "Ajax Amsterdam",
+        "score": 10
+    },
+    {
+        "name": "LOSC Lille",
+        "score": 1
+    }
+]
