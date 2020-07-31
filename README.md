@@ -14,12 +14,17 @@ adonis serve --dev
 
 Now go to [Server](http://127.0.0.1:4000)
 
-### How to use
+## How to use
 
+### Week result
 For viewing every week results put week number at the end of the url like: [Week number 1](http://127.0.0.1:4000/1).
 you can view weeks without running previous week. it gives you the results based on the data that already have and it may change when you run weeks one after another.
 
-### Testing
+### Single team matches
+
+For viewing single team matches make request to: [http://127.0.0.1:4000/matches/TEAM_ID](http://127.0.0.1:4000/matches/TEAM_ID)
+
+## Testing
 
 For testing app, create a database named `football_test`, go to preject folder and run:
 

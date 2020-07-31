@@ -12,6 +12,19 @@ const Group = use("App/Models/Group")
 class MatchController {
 
     /**
+     * Show matches for a team
+     *
+     * @param {object} ctx
+     * @param {Request} ctx.request
+     * @param {Response} ctx.response
+     */
+    async showTeamMatches({ request, response, params }) {
+        const team = await Team.find(params.TEAM_ID)
+
+        return await team.matches()
+    }
+
+    /**
      * Show match results based on the week number
      *
      * @param {object} ctx

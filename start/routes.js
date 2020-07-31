@@ -17,3 +17,4 @@
 const Route = use('Route')
 
 Route.get("/:WEEK", "MatchController.showResults")
+Route.get("matches/:TEAM_ID", "MatchController.showTeamMatches")

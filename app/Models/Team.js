@@ -87,10 +87,13 @@ class Team extends Model {
   async matches() {
     const Database = use("Database"),
       id = this.id
-    return await Database.table("matches").where(function () {
-      this.where('first_team_id', id)
-        .orWhere('second_team_id', id)
-    })
+    return {
+      team: this,
+      matches: await Database.table("matches").where(function () {
+        this.where('first_team_id', id)
+          .orWhere('second_team_id', id)
+      })
+    }
   }
 }
 
