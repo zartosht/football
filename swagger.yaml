@@ -5,7 +5,7 @@ info:
   title: "Football"
   contact:
     email: "hi@Zartosht.dev"
-host: "127.0.0.1:3333"
+host: "127.0.0.1:4000"
 basePath: "/"
 schemes:
 - "http"
