@@ -55,22 +55,6 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/definitions/MatchResult"
-  /reset/all:
-    get:
-      summary: "Reset all data"
-      description: "Reset all data and start a fresh one"
-      operationId: "getResetAll"
-      produces:
-      - "application/json"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            type: "object"
-            properties:
-              reset:
-                type: "string"
-                example: "OK"
 definitions:
   Group:
     type: "object"
