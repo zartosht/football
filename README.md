@@ -24,10 +24,6 @@ you can view weeks without running previous week. it gives you the results based
 
 For viewing single team matches make request to: [http://127.0.0.1:4000/matches/TEAM_ID](http://127.0.0.1:4000/matches/1)
 
-### Reset app
-
-For resetting all the data and start a fresh one make a GET request to [http://127.0.0.1:4000/reset/all](http://127.0.0.1:4000/reset/all)
-
 ### Docker use
 
 For using this app with docker run the following:
