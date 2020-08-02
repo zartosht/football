@@ -12,12 +12,24 @@ const Group = use("App/Models/Group")
 class MatchController {
 
     /**
-     * Reset data and start a fresh one
-     *
-     * @param {object} ctx
-     * @param {Request} ctx.request
-     * @param {Response} ctx.response
-     */
+  * @swagger
+  * /api/hello:
+  *   get:
+  *     tags:
+  *       - Test
+  *     summary: Sample API
+  *     parameters:
+  *       - name: name
+  *         description: Name of the user
+  *         in: query
+  *         required: false
+  *         type: string
+  *     responses:
+  *       200:
+  *         description: Send hello message
+  *         example:
+  *           message: Hello Guess
+  */
     async resetData({ request, response, params }) {
         const ace = require('@adonisjs/ace')
 

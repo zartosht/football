@@ -2,18 +2,11 @@ FROM node:12
 
 WORKDIR /app
 
-RUN npm i -g pm2 && \
-  npm i -g @adonisjs/cli && \
-  chown node:node /app
+COPY . /app/
+COPY ./.env.example /app/.env
 
-USER node
+RUN npm i -g @adonisjs/cli --quiet && \
+    chmod a+x /app/entrypoint.sh && \
+    chmod a+x /app/wait-for-it.sh
 
-COPY --chown=node:node package.json package-lock.json ./
-
-RUN npm ci --production && \
-    adonis migration:run && \
-    adonis seed
-
-COPY --chown=node:node . .
-
-CMD ["adonis", "serve", "--dev"]
+ENTRYPOINT [ "/app/entrypoint.sh" ]

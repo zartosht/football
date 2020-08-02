@@ -28,6 +28,18 @@ For viewing single team matches make request to: [http://127.0.0.1:4000/matches/
 
 For resetting all the data and start a fresh one make a GET request to [http://127.0.0.1:4000/reset/all](http://127.0.0.1:4000/reset/all)
 
+### Docker use
+
+For using this app with docker run the following:
+
+```bash
+docker-compose up --build
+```
+
+##Swagger
+
+For viewing swagger documentation go to [http://127.0.0.1:4000/docs](http://127.0.0.1:4000/docs)
+
 ## Testing
 
 For testing app, create a database named `football_test`, go to preject folder and run:

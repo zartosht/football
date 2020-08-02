@@ -6,6 +6,20 @@ networks:
   football:
  
 services:
+  postgres:
+    image: postgres:11-alpine
+    restart: always
+    volumes:
+      - database:/var/lib/postgresql/data:z
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 13212129
+      POSTGRES_DB: football
+    ports:
+      - 5432:5432
+    networks:
+      - football
+
   app:
     image: back
     build:
@@ -14,22 +28,5 @@ services:
     restart: always
     ports:
       - 4000:4000
-    env_file:
-      - ./.env
     networks:
       - football 
-    command: ["rest"]
-  
-  postgres:
-    image: postgres:11-alpine
-    restart: always
-    volumes:
-      - database:/var/lib/postgresql/data:z
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_DATABASE}
-    ports:
-      - 5432:5432
-    networks:
-      - football

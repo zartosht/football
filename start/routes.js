@@ -16,6 +16,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get("docs", async ({ request, response, view }) => {
+    const Helpers = use("Helpers")
+    return response.download(Helpers.resourcesPath('views/docs.html'))
+})
 Route.get("reset/all", "MatchController.resetData")
 Route.get("/:WEEK", "MatchController.showResults")
 Route.get("matches/:TEAM_ID", "MatchController.showTeamMatches")
