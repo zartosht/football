@@ -15,8 +15,8 @@ class Team extends Model {
    */
   async matchResult(against, at) {
     // Make player that are playing in his home 20% more chance
-    const firstGoals = Math.round((randomBetween() * (this.id == at.id ? 1.2 : 1) * this.strength) / 4),
-      secondGoals = Math.round((randomBetween() * (against.id == at.id ? 1.2 : 1) * against.strength) / 4)
+    const firstGoals = Math.round((randomBetween() * (this.id == at.id ? 1.2 : 1) * this.strength) / 5),
+      secondGoals = Math.round((randomBetween() * (against.id == at.id ? 1.2 : 1) * against.strength) / 5)
 
     /**
      * Calculate score based on the match result
@@ -24,17 +24,17 @@ class Team extends Model {
     if (firstGoals === secondGoals) {
       this.draw = this.draw + 1
       this.score = this.score + 1
-      this.strength = this.strength + 1
+      this.strength = (parseFloat(this.strength) + 0.1).toString() // add to team strengeh
 
       against.draw = against.draw + 1
       against.score = against.score + 1
-      against.strength = against.strength + 1
+      against.strength = (parseFloat(against.strength) + 0.1).toString() // add to team strengeh
     }
 
     if (firstGoals > secondGoals) {
       this.win = this.win + 1
       this.score = this.score + 3
-      this.strength = this.strength + 3
+      this.strength = (parseFloat(this.strength) + 0.3).toString() // add to team strengeh
 
       against.lose = against.lose + 1
     }
@@ -44,7 +44,7 @@ class Team extends Model {
 
       against.win = against.win + 1
       against.score = against.score + 3
-      against.strength = against.strength + 3
+      against.strength = (parseFloat(against.strength) + 0.3).toString() // add to team strengeh
     }
 
     /**

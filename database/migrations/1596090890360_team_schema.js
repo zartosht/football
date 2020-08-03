@@ -8,7 +8,7 @@ class TeamSchema extends Schema {
     this.create('teams', (table) => {
       table.increments()
       table.string('name')
-      table.integer('strength').defaultTo(0)
+      table.string('strength').defaultTo('0')
       table.integer('group_id').unsigned().references('id').on('groups').onDelete('cascade').onUpdate('cascade')
       table.integer('plays').defaultTo(0)
       table.integer('win').defaultTo(0)
