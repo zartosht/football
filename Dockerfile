@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app/
 COPY ./.env.example /app/.env
 
-RUN npm ci --production -qq && \
+RUN npm ci --production --quiet && \
     npm i -g @adonisjs/cli --quiet && \
     chmod a+x /app/entrypoint.sh && \
     chmod a+x /app/wait-for-it.sh
